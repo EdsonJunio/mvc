@@ -4,8 +4,7 @@ $pdo = new PDO("mysql:host=127.0.0.1;dbname=mvc", "root", "mysql");
 $videoList = $pdo->query('SELECT * FROM videos;')->fetchAll(\PDO::FETCH_ASSOC);
 
 ?>
- <?php require_once 'inicio-html.php'?>;
-
+<?php require_once 'inicio-html.php'; ?>
     <ul class="videos__container">
         <?php foreach ($videoList as $video): ?>
         <li class="videos__item">
@@ -23,4 +22,4 @@ $videoList = $pdo->query('SELECT * FROM videos;')->fetchAll(\PDO::FETCH_ASSOC);
         </li>
         <?php endforeach; ?>
     </ul>
-<?php require_once 'fim-html.php'?>;
+<?php require_once 'fim-html.php'; ?>

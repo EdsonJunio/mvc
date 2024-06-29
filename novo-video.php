@@ -7,8 +7,8 @@ if ($url === false) {
     header('Location: /?sucesso=0');
     exit();
 }
-$title= filter_input(INPUT_POST, 'title');
-if ($title === false) {
+$titulo = filter_input(INPUT_POST, 'titulo');
+if ($titulo === false) {
     header('Location: /?sucesso=0');
     exit();
 }
@@ -16,7 +16,7 @@ if ($title === false) {
 $sql = 'INSERT INTO videos (url, title) VALUES (?, ?)';
 $statement = $pdo->prepare($sql);
 $statement->bindValue(1, $url);
-$statement->bindValue(2, $title);
+$statement->bindValue(2, $titulo);
 
 if ($statement->execute() === false) {
     header('Location: /?sucesso=0');
