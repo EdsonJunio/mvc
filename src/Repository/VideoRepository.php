@@ -63,7 +63,7 @@ class VideoRepository
         );
     }
 
-    public function find(int $id)
+    public function find(int $id): Video
     {
         $statement = $this->pdo->prepare('SELECT * FROM videos WHERE id = ?;');
         $statement->bindValue(1, $id, \PDO::PARAM_INT);
