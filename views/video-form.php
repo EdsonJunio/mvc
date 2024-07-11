@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/inicio-html.php';
+$this->layout('layout');
 /** @var \Alura\Mvc\Entity\Video|null $video */
 ?>
 <main class="container">
@@ -22,6 +22,7 @@ require_once __DIR__ . '/inicio-html.php';
             <input name="titulo"
                    value="<?= $video?->title; ?>"
                    class="campo__escrita"
+                   required
                    placeholder="Neste campo, dê o nome do vídeo"
                    id='titulo' />
         </div>
@@ -38,6 +39,3 @@ require_once __DIR__ . '/inicio-html.php';
         <input class="formulario__botao" type="submit" value="Enviar" />
     </form>
 </main>
-
-<?php
-require_once __DIR__ . '/fim-html.php';

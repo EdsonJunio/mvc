@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Alura\Mvc\Entity;
 
-use InvalidArgumentException;
-
 class Video
 {
     public readonly int $id;
@@ -22,7 +20,7 @@ class Video
     private function setUrl(string $url)
     {
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-            throw new InvalidArgumentException();
+            throw new \InvalidArgumentException();
         }
 
         $this->url = $url;
@@ -42,5 +40,4 @@ class Video
     {
         return $this->filePath;
     }
-
 }

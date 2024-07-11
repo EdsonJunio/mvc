@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-$pdo = new PDO("mysql:host=127.0.0.1;dbname=mvc", "root", "mysql");
+$dbPath = __DIR__ . '/banco.sqlite';
+$pdo = new PDO("sqlite:$dbPath");
 
 $email = $argv[1];
 $password = $argv[2];
